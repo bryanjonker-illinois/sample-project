@@ -20,6 +20,6 @@ jobs:
         with:
           gh_token: ${{ secrets.SAMPLE_PROJECT}}
           user: bryanjonker-illinois
-          project_id: 5
+          project_id: 1
           resource_node_id: ${{ github.event.issue.node_id }}
           status_value: ${{ env.nostatus }} # Target status
