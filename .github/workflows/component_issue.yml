@@ -11,4 +11,4 @@ jobs:
       with:
         # The URL of the project board (e.g., https://github.com/orgs/<orgName>/projects/<projectNumber>)
         project-url: https://github.com/users/bryanjonker-illinois/projects/1
-        github-token: ${{ secrets.SAMPLE_PROJECT_OLD }}
+        github-token: ${{ secrets.SAMPLE_PROJECT }}
