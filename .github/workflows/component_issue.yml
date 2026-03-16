@@ -1,24 +1,14 @@
-name: Project automations
+name: Add issues to project
 on:
   issues:
-    types:
-      - opened
-      - reopened
-
-# map fields with customized labels
-env:
-  nostatus: 'Review - AutoAdded'
+    types: [opened, labeled, reopened] # Triggers when an issue is opened, labeled, or reopened
 
 jobs:
-  issue_opened_or_reopened:
-    name: issue_opened_or_reopened
+  add-to-project:
     runs-on: ubuntu-latest
-    if: github.event_name == 'issues' && (github.event.action == 'opened' || github.event.action == 'reopened')
     steps:
-      - name: Move issue to ${{ env.nostatus }}
-        uses: leonsteinhaeuser/project-beta-automations@v1.2.1
-        with:
-          gh_token: ${{ secrets.SAMPLE_PROJECT_OLD}}
-          user: bryanjonker-illinois
-          project_id: 1
-          resource_node_id: ${{ github.event.issue.node_id }}
+    - uses: actions/add-to-project@main
+      with:
+        # The URL of the project board (e.g., https://github.com/orgs/<orgName>/projects/<projectNumber>)
+        project-url: https://github.com/users/bryanjonker-illinois/projects/1
+        github-token: ${{ secrets.SAMPLE_PROJECT }}
