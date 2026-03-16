@@ -19,7 +19,7 @@ jobs:
         uses: leonsteinhaeuser/project-beta-automations@v2
         with:
           gh_token: ${{ secrets.SAMPLE_PROJECT}}
-          organization: bryanjonker-illinois
+          user: bryanjonker-illinois
           project_id: 5
           resource_node_id: ${{ github.event.issue.node_id }}
           status_value: ${{ env.nostatus }} # Target status
