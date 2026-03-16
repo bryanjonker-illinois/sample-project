@@ -16,7 +16,7 @@ jobs:
     if: github.event_name == 'issues' && (github.event.action == 'opened' || github.event.action == 'reopened')
     steps:
       - name: Move issue to ${{ env.nostatus }}
-        uses: leonsteinhaeuser/project-beta-automations@v2
+        uses: leonsteinhaeuser/project-beta-automations@v1.2.1
         with:
           gh_token: ${{ secrets.SAMPLE_PROJECT}}
           user: bryanjonker-illinois
