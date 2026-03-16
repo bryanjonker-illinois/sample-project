@@ -18,7 +18,7 @@ jobs:
       - name: Move issue to ${{ env.nostatus }}
         uses: leonsteinhaeuser/project-beta-automations@v1.2.1
         with:
-          gh_token: ${{ secrets.SAMPLE_PROJECT}}
+          gh_token: ${{ secrets.SAMPLE_PROJECT_OLD}}
           user: bryanjonker-illinois
           project_id: 1
           resource_node_id: ${{ github.event.issue.node_id }}
